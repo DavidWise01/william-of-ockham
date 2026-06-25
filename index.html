@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>William of Ockham — the razor and the medieval logic</title>
+<meta name="description" content="LOGIKĒ · the medieval root (c. 1320) — William of Ockham, the great logician of the Middle Ages. He developed supposition theory (how terms refer), stated what we now call De Morgan's laws centuries before De Morgan, championed nominalism, and is remembered for OCKHAM'S RAZOR: do not multiply entities beyond necessity — prefer the simpler adequate explanation. Live: the razor as the modern problem of overfitting — fit noisy data with a simple model versus a complex one that wiggles through every point. Honest: the razor is a heuristic, not a law; the famous wording is a later paraphrase. David Lee Wise, two-layer honest.">
+<style>
+  :root{--bg:#0c0f17;--panel:#121622;--panel2:#19202f;--edge:#2a3346;--ink:#ede6d6;--dim:#b3ad9a;--faint:#7c7660;
+    --ochre:#d9b66a;--ochre2:#f0d79a;--proof:#5ad1ff;--proof2:#a7e6ff;--one:#7fe0a0;--zero:#fb7185;--amber:#fbbf24;--ember:#fb923c;
+    --mono:'SFMono-Regular',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;--serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.58;background-image:radial-gradient(1100px 560px at 75% -10%,#1c2436 0%,transparent 55%),radial-gradient(900px 500px at 0% 100%,#14110a 0%,transparent 55%);}
+  .wrap{max-width:1000px;margin:0 auto;padding:44px 26px 90px}
+  header{border-bottom:1px solid var(--edge);padding-bottom:22px;margin-bottom:24px}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ochre);opacity:.95}
+  h1{font-family:Georgia,serif;font-size:38px;line-height:1.08;margin:.3em 0 .14em;font-weight:600}h1 em{color:var(--ochre2);font-style:italic}
+  .who{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em}
+  .sub{color:var(--dim);font-size:16px;max-width:74ch;margin-top:14px}.sub b{color:var(--ink)}
+  .verdicts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:22px 0}@media(max-width:720px){.verdicts{grid-template-columns:1fr}}
+  .vc{border:1px solid var(--edge);border-radius:11px;padding:13px 15px;border-top-width:3px;background:rgba(18,22,34,.6)}
+  .vc .badge{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em}
+  .vc.s{border-top-color:var(--one)}.vc.s .badge{color:var(--one)} .vc.m{border-top-color:var(--amber)}.vc.m .badge{color:var(--amber)} .vc.f{border-top-color:var(--ember)}.vc.f .badge{color:var(--ember)}
+  .vc p{font-size:12px;color:var(--dim);margin:6px 0 0;line-height:1.45}.vc p b{color:var(--ink)}
+  section{margin:36px 0}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--ochre2);border-left:2px solid var(--ochre);padding-left:11px;margin:0 0 6px}
+  .lede{color:var(--dim);font-size:15px;margin:0 0 18px;max-width:80ch}
+  .panel{background:linear-gradient(180deg,var(--panel),#0a0d14);border:1px solid var(--edge);border-radius:14px;padding:20px;box-shadow:0 24px 60px -40px #000}
+  .controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:10px}
+  input[type=range]{accent-color:var(--ochre);width:240px}
+  button{font-family:var(--mono);font-size:12px;color:var(--ink);background:#1a2030;border:1px solid var(--edge);border-radius:8px;padding:8px 12px;cursor:pointer}button:hover{background:#222b3e;border-color:var(--ochre)}
+  .stat{font-family:var(--mono);font-size:12px;color:var(--dim);display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;justify-content:center}.stat b{color:var(--ochre2)}.stat .good{color:var(--one)}.stat .bad{color:var(--zero)}
+  .verdict{font-family:var(--mono);font-size:14px;text-align:center;margin-top:8px;min-height:22px}.verdict b{color:var(--one)}
+  .note{color:var(--dim);font-size:13.5px;border-left:2px solid var(--edge);padding-left:13px;margin:16px 0 0}.note b{color:var(--ink)}
+  .thm{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}@media(max-width:620px){.thm{grid-template-columns:1fr}}
+  .tm{border:1px solid var(--edge);border-radius:10px;padding:13px 15px;background:rgba(0,0,0,.14)}.tm b{color:var(--ochre2);font-family:var(--mono);font-size:11px}.tm p{font-size:13px;color:var(--dim);margin:6px 0 0}
+  footer{margin-top:44px;border-top:1px solid var(--edge);padding-top:18px;color:var(--faint);font-family:var(--mono);font-size:11px;line-height:1.7}
+  footer a,.bar2 a{color:var(--ochre)}.bar2{font-family:var(--mono);font-size:11.5px;margin-bottom:16px}.bar2 a{text-decoration:none;border-bottom:1px dotted #4a4126}
+  code{font-family:var(--mono);color:var(--ochre2);background:#15120a;padding:1px 5px;border-radius:5px}
+  blockquote{margin:14px 0;padding:10px 16px;border-left:3px solid var(--ochre);color:var(--ink);font-style:italic;font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="bar2"><a href="https://davidwise01.github.io/ud0/">◄ UD0</a> &nbsp; <a href="https://davidwise01.github.io/ramon-llull/">← Llull</a> &nbsp; LOGIKĒ · the medieval root</div>
+<header>
+  <div class="kicker">LOGIKĒ · the medieval root · c. 1320</div>
+  <h1>William of <em>Ockham</em></h1>
+  <div class="who">c. 1287 – 1347 · Ockham, Surrey &amp; Oxford &amp; Munich · Franciscan friar · the greatest logician of the Middle Ages</div>
+  <div class="sub">Between [[ramon-llull]]'s combinatorial wheel and [[leibniz]]'s dream of calculation, logic did not sleep — it was refined, hard, in the medieval universities, and its sharpest mind was a Franciscan friar from Surrey. Ockham built a deep theory of how words <b>refer</b> (supposition theory), stated the rules we now credit to [[augustus-de-morgan]] <em>five centuries early</em>, and argued that universals — "redness," "humanity" — are not things in the world but <b>names</b> in the mind (nominalism). But he is famous for a principle of method so durable it outlived the entire scholastic project: <b>do not multiply entities beyond necessity.</b> Given two explanations that fit the facts equally, prefer the <em>simpler</em>. <b>Ockham's Razor</b> — and it turns out to be the founding intuition of modern model selection.</div>
+</header>
+<div class="verdicts">
+  <div class="vc s"><span class="badge">✓ STRONG</span><p><b>A real logician, a lasting principle.</b> Ockham's supposition theory and his statement of the De Morgan rules are genuine medieval logic of high order; and the razor — prefer the simpler adequate explanation — is sound methodological guidance that science still runs on.</p></div>
+  <div class="vc m"><span class="badge">◐ A HEURISTIC, NOT A LAW</span><p><b>Simpler ≠ true.</b> The razor is a <em>tie-breaker</em>, not a theorem: when two theories fit equally, bet on the simpler — but reality is sometimes complicated, and the razor can cut the right answer. It guides; it does not prove.</p></div>
+  <div class="vc f"><span class="badge">◔ THE WORDING IS LATER</span><p><b>He didn't quite say it.</b> "Entities must not be multiplied beyond necessity" (entia non sunt multiplicanda…) is a 17th-century paraphrase. Ockham used the idea repeatedly, in other words; the famous Latin slogan was put in his mouth afterward.</p></div>
+</div>
+
+<section>
+  <h2>I · The razor, as the machine sees it — overfitting</h2>
+  <p class="lede">Ockham's razor has a precise modern face: the problem of <b>overfitting</b>. Here are noisy data points that really come from a simple line. Slide up the model's <b>complexity</b> — let it use a higher-degree curve — and watch it bend to pass through <em>every</em> point, error on the data dropping to zero. But look what it does <em>between</em> the points: it wiggles wildly, fitting the <b>noise</b>, not the signal. The simplest model that explains the data is the one that will be right about the next point. Razor: don't multiply curves beyond necessity.</p>
+  <div class="panel">
+    <div class="controls">
+      <span style="font-family:var(--mono);font-size:12px;color:var(--faint)">model complexity (degree)</span>
+      <input type="range" id="deg" min="1" max="6" step="1" value="1">
+      <button id="reseed">new data ↻</button>
+    </div>
+    <svg id="plot" viewBox="0 0 520 270" width="520" height="270"></svg>
+    <div class="stat">
+      <span>degree <b id="sDeg">1</b></span>
+      <span>fit error on the data <b id="sFit"></b></span>
+      <span>wiggle (between points) <b id="sWig"></b></span>
+    </div>
+    <div class="verdict" id="verdict"></div>
+    <div class="note">Crank the degree and the <em>fit error</em> falls toward zero while the <em>wiggle</em> explodes — the model is memorising noise, not learning the line. ⚑ This is Ockham's razor made quantitative: it is the bias-variance tradeoff, the principle behind regularisation, the Minimum Description Length, and the "Bayesian Occam factor" that penalises complex models automatically. Seven centuries before machine learning had a name, a friar wrote down its first commandment — <em>prefer the simpler adequate hypothesis</em> — and it is still the line between learning and overfitting.</div>
+  </div>
+  <blockquote>"It is futile to do with more what can be done with fewer." <span style="color:var(--faint);font-style:normal;font-size:12px">— William of Ockham (Summa Logicae, paraphrased)</span></blockquote>
+</section>
+
+<section>
+  <h2>II · The logician behind the razor</h2>
+  <div class="thm">
+    <div class="tm"><b>SUPPOSITION THEORY &amp; THE DE MORGAN RULES</b><p>A rigorous medieval account of how a term <em>refers</em> in a sentence, and an explicit statement that negating "A and B" gives "not-A or not-B" — [[augustus-de-morgan]]'s laws, five centuries before De Morgan.</p></div>
+    <div class="tm"><b>NOMINALISM</b><p>Universals like "redness" are not real things floating in a Platonic heaven — they are <em>names</em>, mental signs that stand for many particulars. Reality is individuals; generality lives in language. A razor applied to metaphysics itself.</p></div>
+  </div>
+  <p class="lede" style="margin-top:16px">The razor is not a stray maxim — it is the <b>method</b> of a thinker who used it on everything. Ockham's nominalism <em>is</em> the razor turned on metaphysics: don't posit a whole realm of universal Forms when names in the mind will do the job. His logic of supposition is the razor turned on language: pin down exactly what a word stands for, and the pseudo-problems dissolve. He was a working logician of the first rank — the medieval period this lineage had skipped was not a gap in reasoning but a forge of it, and Ockham was its sharpest edge. That his rules for negation, his theory of reference, and his principle of parsimony all resurfaced — in [[augustus-de-morgan]], in modern semantics, in machine learning — is the measure of how far ahead he was working. ⚑ The friar who told the future to keep it simple.</p>
+</section>
+
+<section>
+  <h2>III · The razor's edge, and the heretic who held it</h2>
+  <p class="note" style="border-color:var(--amber)"><b style="color:var(--amber)">Gate kept on.</b> Two honesties, on the principle and the man. On the <b>principle</b>: the razor is <em>real and useful</em> but it is a <b>heuristic, not a law</b> — it says that when two explanations fit the evidence equally, you should bet on the simpler, because it is less likely to be fitting noise and more likely to generalise (which the overfitting demo makes precise). It does <em>not</em> say the simpler theory is true — reality is sometimes genuinely complicated, and a too-eager razor can shave off the correct answer; its modern formalisations (regularisation, MDL, Bayesian model comparison) make the tradeoff exact rather than mystical. And the famous Latin slogan, <em>entia non sunt multiplicanda praeter necessitatem</em>, is a 17th-century formulation — Ockham expressed the idea many times, but not in those words. On the <b>man</b>: William of Ockham was a brilliant and combative Franciscan who was summoned to Avignon on suspicion of heresy, took the Pope's side then broke with him violently over the doctrine of apostolic poverty, fled to the protection of the Holy Roman Emperor, was excommunicated, and died — probably of the Black Death — still in exile. A friar who sharpened the tools of reason, applied them without mercy to the Church's own metaphysics, and paid for it. ⚑ The medieval root of the lineage, restored. [[ramon-llull]] ← · the lineage runs on to [[leibniz]] and the modern age.</p>
+</section>
+
+<footer>
+  WILLIAM OF OCKHAM · LOGIKĒ · the medieval root · two-layer honest<br>
+  live Ockham's razor as OVERFITTING (noisy points from a line; raise the polynomial degree → fit error → 0 but the curve wiggles through the noise; the simplest adequate model generalises — verified Runge oscillation grows with degree)<br>
+  supposition theory · De Morgan's laws stated ~1320 (five centuries early) · nominalism · Ockham's razor = parsimony = the root of modern model selection (regularisation / MDL / Bayesian Occam)<br>
+  ← <a href="https://davidwise01.github.io/ramon-llull/">Llull</a> · the lineage runs on to <a href="https://davidwise01.github.io/leibniz/">Leibniz</a><br>
+  LOGIKĒ · the lineage of logical mathematics · governor David Lee Wise · CC-BY-ND-4.0
+</footer>
+</div>
+<script>
+"use strict";
+(function(){
+  const $=id=>document.getElementById(id);
+  const N=7;
+  const xs=[]; for(let i=0;i<N;i++) xs.push(i);
+  let ys=[];
+  // deterministic-ish pseudo noise (Math.random allowed in-browser)
+  function seed(){ ys=xs.map(x=> x*0.85+0.6 + (Math.random()-0.5)*1.1 ); }
+  function lagrange(px,py,x){let s=0;for(let i=0;i<px.length;i++){let t=py[i];for(let j=0;j<px.length;j++)if(j!==i)t*=(x-px[j])/(px[i]-px[j]);s+=t;}return s;}
+  // least-squares polynomial fit of given degree → coefficients (normal equations, small N)
+  function polyfit(px,py,deg){
+    const m=deg+1, X=[], Y=[];
+    for(let r=0;r<m;r++){ X.push(new Array(m).fill(0)); Y.push(0); }
+    for(let r=0;r<m;r++){ for(let c=0;c<m;c++){ let s=0; for(let k=0;k<px.length;k++) s+=Math.pow(px[k],r+c); X[r][c]=s; } let sy=0; for(let k=0;k<px.length;k++) sy+=py[k]*Math.pow(px[k],r); Y[r]=sy; }
+    // gaussian elimination
+    for(let i=0;i<m;i++){ let p=i; for(let r=i+1;r<m;r++) if(Math.abs(X[r][i])>Math.abs(X[p][i])) p=r; [X[i],X[p]]=[X[p],X[i]]; [Y[i],Y[p]]=[Y[p],Y[i]];
+      for(let r=0;r<m;r++){ if(r===i)continue; const f=X[r][i]/X[i][i]; for(let c=i;c<m;c++) X[r][c]-=f*X[i][c]; Y[r]-=f*Y[i]; } }
+    return X.map((row,i)=> Y[i]/X[i][i]);
+  }
+  function eval_(coef,x){ let s=0; for(let i=0;i<coef.length;i++) s+=coef[i]*Math.pow(x,i); return s; }
+  function draw(){
+    const deg=+$('deg').value;
+    // if degree >= N-1, interpolate exactly (lagrange) to show extreme overfit
+    let f;
+    if(deg>=N-1){ f=(x)=>lagrange(xs,ys,x); }
+    else { const c=polyfit(xs,ys,deg); f=(x)=>eval_(c,x); }
+    const W=520,H=270,padL=34,padR=14,padT=14,padB=26;
+    const xmin=-0.4,xmax=N-0.6, ymin=-2.5,ymax=N+1.5;
+    const sx=x=>padL+(x-xmin)/(xmax-xmin)*(W-padL-padR);
+    const sy=y=>H-padB-(y-ymin)/(ymax-ymin)*(H-padT-padB);
+    let s='';
+    s+='<rect x="0" y="0" width="'+W+'" height="'+H+'" fill="#0c1622" rx="8"/>';
+    // axes
+    s+='<line x1="'+padL+'" y1="'+sy(0)+'" x2="'+(W-padR)+'" y2="'+sy(0)+'" stroke="#2a3346"/>';
+    // the true line (signal)
+    s+='<line x1="'+sx(xmin)+'" y1="'+sy(0.85*xmin+0.6)+'" x2="'+sx(xmax)+'" y2="'+sy(0.85*xmax+0.6)+'" stroke="#3a4660" stroke-width="1.5" stroke-dasharray="4 4"/>';
+    // model curve
+    let path=''; for(let x=xmin;x<=xmax;x+=0.04){ const X=sx(x),Y=sy(Math.max(ymin-2,Math.min(ymax+2,f(x)))); path+=(path?'L':'M')+X.toFixed(1)+' '+Y.toFixed(1)+' '; }
+    s+='<path d="'+path+'" fill="none" stroke="#d9b66a" stroke-width="2.4"/>';
+    // data points
+    xs.forEach((x,i)=>{ s+='<circle cx="'+sx(x)+'" cy="'+sy(ys[i])+'" r="4.5" fill="#5ad1ff"/>'; });
+    $('plot').innerHTML=s;
+    // metrics: fit error (RMS at points), wiggle (max |f| deviation from line, sampled between)
+    let fit=0; xs.forEach((x,i)=>{ fit+=(f(x)-ys[i])**2; }); fit=Math.sqrt(fit/N);
+    let wig=0; for(let x=0;x<=N-1;x+=0.1){ const dev=Math.abs(f(x)-(0.85*x+0.6)); if(dev>wig)wig=dev; }
+    $('sDeg').textContent=deg;
+    $('sFit').innerHTML='<span class="'+(fit<0.6?'good':'')+'">'+fit.toFixed(3)+'</span>';
+    $('sWig').innerHTML='<span class="'+(wig>3?'bad':(wig<1.2?'good':''))+'">'+wig.toFixed(2)+'</span>';
+    $('verdict').innerHTML = deg<=2
+      ? 'simple model — fits the <b>signal</b>, ignores the noise. <b>Ockham approves.</b>'
+      : (wig>3 ? '<span style="color:var(--zero)">overfit — the curve chases noise between the points (look at the wiggle)</span>'
+               : 'flexible — fitting the data more closely, starting to bend toward the noise');
+  }
+  $('deg').oninput=draw; $('reseed').onclick=()=>{seed();draw();};
+  seed(); draw();
+})();
+</script>
+</body>
+</html>
