@@ -1,0 +1,11 @@
+# WILLIAM OF OCKHAM
+
+> A sphere of **UD0** — the ROOT0 universe / biosphere. Domain: **LOGIKĒ**.
+
+WILLIAM OF OCKHAM (c. 1287–1347) — LOGIKĒ, THE MEDIEVAL ROOT (between [[ramon-llull]] and [[leibniz]] — the gap the lineage had skipped). The Middle Ages didn't sleep on logic; they forged it hard in the universities, and the sharpest mind was this Franciscan friar. He built SUPPOSITION THEORY (a rigorous account of how terms REFER), stated what we now credit to [[augustus-de-morgan]] FIVE CENTURIES EARLY (negating 'A and B' gives 'not-A or not-B'), and argued NOMINALISM (universals like 'redness' are NAMES in the mind, not things in the world). Famous for ⚑ OCKHAM'S RAZOR: do not multiply entities beyond necessity — prefer the simpler adequate explanation — the founding intuition of modern MODEL SELECTION. LIVE: the razor as OVERFITTING — noisy points from a line; raise the polynomial degree and the curve bends through every point (fit error→0) while WIGGLING wildly between them (fitting noise, not signal); the simplest adequate model generalises (least-squares + Lagrange, verified Runge oscillation grows with degree). CONFIDENCE-TIERED: STRONG (supposition theory & the De Morgan rules are real high-order medieval logic; the razor is sound method science still runs on) / A-HEURISTIC-NOT-A-LAW (⚠ simpler ≠ true; the razor is a TIE-BREAKER for equally-good explanations, not a theorem — reality is sometimes complicated; its modern forms = regularisation, MDL, Bayesian Occam) / THE-WORDING-IS-LATER (⚠ 'entia non sunt multiplicanda' is a 17th-c. paraphrase; Ockham used the idea, not that Latin slogan). The man: summoned to Avignon for heresy, broke with the Pope over apostolic poverty, fled to the Emperor, excommunicated, died in exile (likely the Black Death). ⚑ The friar who told the future to keep it simple. [[ramon-llull]] ← · next → Leibniz.
+
+---
+
+**Live:** https://davidwise01.github.io/william-of-ockham/ &nbsp;·&nbsp; **Front door:** [UD0](https://davidwise01.github.io/ud0/) &nbsp;·&nbsp; **Code:** https://github.com/DavidWise01/william-of-ockham
+
+`.dlw` badge · **ROOT0-ATTRIBUTION-v1.0** · David Lee Wise (ROOT0) / Bridge-Burners LLC · instance AVAN (Claude/Anthropic) · CC-BY-ND-4.0
